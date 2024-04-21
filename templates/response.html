@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container col-md-12">
+        <div class="card text-center">
+          <div class="card-header" style="background-color: #3498db; color: #fff;">
+            <h4 style="margin-bottom: 5px;">{{ contact_tracing.name }} {{ contact_tracing.phone }} Response</h4>
+            <h5 style="margin-top: 5px;">Response recorded for {{ contact_tracing.name }} on {{ contact_tracing.create_date }}</h5>
+          </div>      
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Question</th>
+                                <th scope="col">Response</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>{{ contact_tracing.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Age</td>
+                                <td>{{ contact_tracing.age }} Years Old</td>
+                            </tr>
+                            <tr>
+                                <td>Contact Number</td>
+                                <td>{{ contact_tracing.phone }}</td>
+                            </tr>
+                            <tr>
+                                <td>Symptoms</td>
+                                <td>{{ contact_tracing.symptoms }}</td>
+                            </tr>
+                            <tr>
+                                <td>Symptoms Onset Date</td>
+                                <td>{{ contact_tracing.symptops_started }}</td>
+                            </tr>
+                            <tr>
+                                <td>Close Contact with Symptoms</td>
+                                <td>{{ contact_tracing.closeness }}</td>
+                            </tr>
+                            <tr>
+                                <td>Chronic Medical Conditions</td>
+                                <td>{{ contact_tracing.other_medical_issues }}</td>
+                            </tr>
+                            <tr>
+                                <td>Family Members</td>
+                                <td>{{ contact_tracing.family_members }}</td>
+                            </tr>
+                            <tr>
+                                <td>Anyone Else with Similar Symptoms at Home</td>
+                                <td>{{ contact_tracing.same_symptoms }}</td>
+                            </tr>
+                            <tr>
+                                <td>Recent Travel History</td>
+                                <td>{{ contact_tracing.any_recent_travel }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
