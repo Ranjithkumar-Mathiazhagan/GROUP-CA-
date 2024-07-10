@@ -81,10 +81,12 @@ def login():
           flash('You are now logged in', 'success')
           return redirect(url_for('dashboard'))
 
+        #INvalid flow
         else:
           error = 'Invalid login'
           return render_template('login.html', error=error)
           cur.close()
+          
 
         else:
          error = 'Username not found'
